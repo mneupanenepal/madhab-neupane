@@ -1,0 +1,16 @@
+media: media
+
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: content/pages
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: body
+        label: Content
+        type: rich-text
