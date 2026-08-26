@@ -1,10 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Madhab Raj Neupane</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Madhab Raj Neupane | Planning, Development & Research</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #ffffff;
+        }
+
+        /* Main Header */
+        header {
+            width: 100%;
+            border-bottom: 1px solid #e5e5e5;
+            background: #ffffff;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 22px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Name / Logo */
+        .brand {
+            text-decoration: none;
+            color: #222;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-subtitle {
+            margin-top: 4px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #167c68;
+        }
+
+        /* Temporary homepage area */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        main h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+            max-width: 750px;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px 22px;
+            }
+
+            main h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>Spatial Planning | Infrastructure | Regional Development</p>
+
+    <header>
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <div class="brand-name">Madhab Raj Neupane</div>
+                <div class="brand-subtitle">
+                    Planning · Development · Research
+                </div>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="development.html">Development &amp; Planning</a></li>
+                    <li><a href="articles.html">Insights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <h1>Planning, Development &amp; Research</h1>
+
+        <p>
+            Exploring the relationships between spatial planning,
+            infrastructure, development, governance and society.
+        </p>
+
+    </main>
+
 </body>
 </html>
