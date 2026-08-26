@@ -8,6 +8,22 @@ content:
     type: collection
     path: content/articles
     filename: "{year}-{month}-{day}-{title}.md"
+
+    view:
+      fields:
+        - title
+        - language
+        - date
+        - category
+        - featured
+      primary: title
+      sort:
+        - date
+        - title
+      default:
+        sort: date
+        order: desc
+
     fields:
       - name: title
         label: Title
@@ -19,9 +35,12 @@ content:
         type: select
         options:
           values:
-            - en
-            - ne
-            - de
+            - name: en
+              label: English
+            - name: ne
+              label: नेपाली
+            - name: de
+              label: Deutsch
         required: true
 
       - name: date
@@ -31,7 +50,47 @@ content:
 
       - name: category
         label: Category
-        type: string
+        type: select
+        options:
+          values:
+            - Analysis
+            - Opinion
+            - Reflection
+            - Research
+            - Development
+            - Planning
+            - Infrastructure
+            - Society
+            - Politics
+            - Environment
+            - Culture
+            - Personal
+
+      - name: topics
+        label: Topics
+        type: select
+        options:
+          multiple: true
+          values:
+            - Nepal
+            - Karnali
+            - Urban Development
+            - Regional Development
+            - Spatial Planning
+            - Infrastructure
+            - Governance
+            - Decentralization
+            - Social Justice
+            - Environment
+            - Climate Change
+            - Disaster
+            - Migration
+            - Development
+            - Politics
+            - Society
+            - Culture
+            - Technology
+            - Research
 
       - name: excerpt
         label: Excerpt
@@ -40,6 +99,17 @@ content:
       - name: featured_image
         label: Featured Image
         type: image
+        options:
+          path: articles
+
+      - name: translation_group
+        label: Translation Group
+        type: string
+        description: Use the same identifier for different language versions of the same article.
+
+      - name: featured
+        label: Featured Article
+        type: boolean
 
       - name: body
         label: Content
