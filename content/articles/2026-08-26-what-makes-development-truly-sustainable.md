@@ -14,8 +14,6 @@ excerpt: Sustainable development is more than protecting the environment. It is
   long term.
 featured: false
 ---
-# What Makes Development Truly Sustainable?
-
 Development is often measured by what we build: roads, buildings, cities, industries and infrastructure. But development is not truly sustainable simply because something is new, modern or technically impressive.
 
 The harder question is: **Will it continue to create value for people, communities and future generations?**
