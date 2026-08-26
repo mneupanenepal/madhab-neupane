@@ -7,7 +7,6 @@ topics:
   - Urban Development
   - Spatial Planning
   - Development
-  - Politics
 excerpt: Sustainable development is more than protecting the environment. It is
   about creating solutions that are technically sound, economically viable,
   socially inclusive, and resilient enough to serve people and places over the
