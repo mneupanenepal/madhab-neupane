@@ -1,15 +1,45 @@
-media: media
+media:
+  input: media
+  output: /media
 
 content:
-  - name: pages
-    label: Pages
+  - name: articles
+    label: Articles
     type: collection
-    path: content/pages
+    path: content/articles
+    filename: "{year}-{month}-{day}-{title}.md"
     fields:
       - name: title
         label: Title
         type: string
         required: true
+
+      - name: language
+        label: Language
+        type: select
+        options:
+          values:
+            - en
+            - ne
+            - de
+        required: true
+
+      - name: date
+        label: Publication Date
+        type: date
+        required: true
+
+      - name: category
+        label: Category
+        type: string
+
+      - name: excerpt
+        label: Excerpt
+        type: text
+
+      - name: featured_image
+        label: Featured Image
+        type: image
 
       - name: body
         label: Content
