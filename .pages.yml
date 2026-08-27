@@ -570,3 +570,42 @@ content:
       - name: body
         label: Full Experience / Reflection
         type: rich-text
+  # ============================================================
+  # 5. HOMEPAGE SETTINGS
+  # ============================================================
+  # Content that can be changed from Pages CMS without editing
+  # index.html.
+  # ============================================================
+
+  - name: homepage
+    label: Homepage
+    type: file
+    path: content/homepage.md
+
+    fields:
+
+      - name: title
+        label: Homepage Title
+        type: string
+
+      - name: tagline
+        label: Tagline
+        type: string
+
+      - name: profile_photo
+        label: Profile Photo
+        type: image
+        options:
+          path: media
+
+      - name: perspective_title
+        label: Perspective Title
+        type: string
+
+      - name: perspective
+        label: My Perspective
+        type: rich-text
+
+      - name: introduction
+        label: Introduction
+        type: rich-text
