@@ -598,14 +598,10 @@ content:
   options:
     path: media
     extensions:
-      - jpg
-      - JPG
-      - jpeg
-      - JPEG
-      - png
-      - PNG
-      - webp
-      - WEBP
+  - jpg
+  - jpeg
+  - png
+  - webp
 
       - name: perspective_title
         label: Perspective Title
