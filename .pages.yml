@@ -593,10 +593,19 @@ content:
         type: string
 
       - name: profile_photo
-        label: Profile Photo
-        type: image
-        options:
-          path: media
+  label: Profile Photo
+  type: image
+  options:
+    path: media
+    extensions:
+      - jpg
+      - JPG
+      - jpeg
+      - JPEG
+      - png
+      - PNG
+      - webp
+      - WEBP
 
       - name: perspective_title
         label: Perspective Title
