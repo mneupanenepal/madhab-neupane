@@ -2,232 +2,725 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Madhab Raj Neupane | Planning, Development & Research</title>
 
+    <meta
+        name="description"
+        content="Madhab Raj Neupane — Planning, Development, Infrastructure and Research."
+    >
+
     <style>
+
+        /* =========================================================
+           GLOBAL RESET
+           ========================================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #222;
             background: #ffffff;
+            line-height: 1.6;
         }
 
-        /* Main Header */
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
         header {
             width: 100%;
-            border-bottom: 1px solid #e5e5e5;
             background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            position: relative;
+            z-index: 1000;
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 22px 30px;
+
+            padding: 20px 30px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            gap: 40px;
         }
 
-        /* Name / Logo */
+
+        /* =========================================================
+           BRAND
+           ========================================================= */
+
         .brand {
             text-decoration: none;
             color: #222;
+
+            flex-shrink: 0;
         }
 
         .brand-name {
             font-size: 22px;
             font-weight: 700;
             letter-spacing: -0.3px;
+            line-height: 1.2;
         }
 
         .brand-subtitle {
-            margin-top: 4px;
+            margin-top: 5px;
+
             font-size: 12px;
+            line-height: 1.35;
+
             color: #777;
         }
 
-        /* Navigation */
-        nav ul {
+
+        /* =========================================================
+           MAIN NAVIGATION
+           ========================================================= */
+
+        nav {
+            margin-left: auto;
+        }
+
+        /*
+           IMPORTANT:
+           nav > ul means ONLY the main navigation list.
+           The dropdown lists will NOT inherit this flex layout.
+        */
+
+        nav > ul {
             list-style: none;
+
             display: flex;
-            gap: 30px;
             align-items: center;
+            justify-content: flex-end;
+
+            gap: 22px;
+
+            margin: 0;
+            padding: 0;
         }
 
-        nav a {
+
+        /* Main menu items */
+
+        nav > ul > li {
+            position: relative;
+            list-style: none;
+        }
+
+
+        /* Main menu links */
+
+        nav > ul > li > a {
+            display: block;
+
+            padding: 8px 0;
+
             text-decoration: none;
+
             color: #333;
-            font-size: 15px;
+
+            font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s ease;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease;
         }
 
-        nav a:hover {
+
+        /* Main menu hover */
+
+        nav > ul > li > a:hover {
             color: #167c68;
         }
-        /* Dropdown Navigation */
 
-nav ul li {
-    position: relative;
-}
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 210px;
+        /* =========================================================
+           DROPDOWN MENU
+           ========================================================= */
 
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
+        nav li.dropdown {
+            position: relative;
+        }
 
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 
-    z-index: 1000;
-}
+        /*
+           Invisible bridge between menu item and dropdown.
+           This prevents the dropdown disappearing while moving
+           the mouse from the menu item into the dropdown.
+        */
 
-.dropdown-menu li {
-    width: 100%;
-}
+        nav li.dropdown::after {
+            content: "";
 
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 18px;
-    white-space: nowrap;
-}
+            position: absolute;
 
-.dropdown-menu li a:hover {
-    background: #f4f7f6;
-}
+            left: 0;
+            right: 0;
 
-/* Show dropdown when hovering */
+            top: 100%;
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-        /* Temporary homepage area */
+            height: 8px;
+        }
+
+
+        /* Dropdown box */
+
+        nav .dropdown-menu {
+            display: none;
+
+            position: absolute;
+
+            top: calc(100% + 7px);
+            left: 0;
+
+            min-width: 230px;
+
+            margin: 0;
+            padding: 8px 0;
+
+            list-style: none;
+
+            background: #ffffff;
+
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+
+            box-shadow:
+                0 8px 24px rgba(0, 0, 0, 0.12);
+
+            z-index: 2000;
+
+            /*
+               IMPORTANT:
+               Dropdown must be vertical.
+            */
+
+            flex-direction: column;
+            gap: 0;
+        }
+
+
+        /* Dropdown list items */
+
+        nav .dropdown-menu li {
+            display: block;
+
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+
+        /* Dropdown links */
+
+        nav .dropdown-menu li a {
+            display: block;
+
+            width: 100%;
+
+            padding: 10px 18px;
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-size: 14px;
+            font-weight: 400;
+
+            line-height: 1.4;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+
+        /* Dropdown hover */
+
+        nav .dropdown-menu li a:hover {
+            background: #f4f7f6;
+            color: #167c68;
+        }
+
+
+        /* Show dropdown on hover */
+
+        nav li.dropdown:hover > .dropdown-menu {
+            display: flex;
+        }
+
+
+        /* =========================================================
+           MAIN HOMEPAGE CONTENT
+           ========================================================= */
+
         main {
             max-width: 1200px;
+
             margin: 0 auto;
-            padding: 80px 30px;
+
+            padding: 80px 30px 100px;
         }
+
 
         main h1 {
             font-size: 42px;
+
             line-height: 1.15;
+
             margin-bottom: 20px;
+
+            color: #111;
+
+            font-weight: 700;
         }
+
 
         main p {
+            max-width: 780px;
+
             font-size: 18px;
+
             line-height: 1.7;
+
             color: #666;
-            max-width: 750px;
         }
 
-        /* Mobile */
+
+        /* =========================================================
+           GENERAL CONTENT LINKS
+           ========================================================= */
+
+        main a {
+            color: #167c68;
+
+            text-decoration: none;
+        }
+
+        main a:hover {
+            color: #0f5f51;
+
+            text-decoration: underline;
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        footer {
+            max-width: 1200px;
+
+            margin: 60px auto 0;
+
+            padding: 30px;
+
+            border-top: 1px solid #e5e5e5;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           TABLET
+           ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .nav-container {
+                padding: 18px 24px;
+
+                gap: 25px;
+            }
+
+            nav > ul {
+                gap: 17px;
+            }
+
+            nav > ul > li > a {
+                font-size: 13px;
+            }
+
+            .brand-name {
+                font-size: 20px;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
         @media (max-width: 800px) {
 
             .nav-container {
                 flex-direction: column;
+
                 align-items: flex-start;
-                gap: 20px;
+
+                gap: 18px;
+
+                padding: 20px;
             }
 
-            nav ul {
-                flex-wrap: wrap;
-                gap: 15px 22px;
+
+            nav {
+                width: 100%;
+
+                margin-left: 0;
             }
+
+
+            nav > ul {
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                justify-content: flex-start;
+
+                gap: 2px;
+            }
+
+
+            nav > ul > li {
+                width: 100%;
+            }
+
+
+            nav > ul > li > a {
+                width: 100%;
+
+                padding: 9px 0;
+
+                white-space: normal;
+            }
+
+
+            /*
+               Mobile dropdowns become part of the normal page flow.
+            */
+
+            nav .dropdown-menu {
+                position: static;
+
+                width: 100%;
+
+                min-width: 0;
+
+                display: none;
+
+                box-shadow: none;
+
+                border: none;
+
+                border-left: 2px solid #e5e5e5;
+
+                border-radius: 0;
+
+                margin: 3px 0 8px 8px;
+
+                padding: 0 0 0 10px;
+            }
+
+
+            /*
+               On mobile, keep dropdown accessible.
+            */
+
+            nav li.dropdown:hover > .dropdown-menu {
+                display: flex;
+            }
+
+
+            nav .dropdown-menu li a {
+                padding: 8px 12px;
+
+                font-size: 14px;
+
+                white-space: normal;
+            }
+
+
+            main {
+                padding: 55px 20px 80px;
+            }
+
 
             main h1 {
                 font-size: 34px;
             }
+
+
+            main p {
+                font-size: 16px;
+            }
         }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE SCREENS
+           ========================================================= */
+
+        @media (max-width: 500px) {
+
+            .brand-name {
+                font-size: 19px;
+            }
+
+            .brand-subtitle {
+                font-size: 11px;
+            }
+
+            main h1 {
+                font-size: 30px;
+            }
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+    <!-- =========================================================
+         HEADER / MAIN NAVIGATION
+         ========================================================= -->
 
     <header>
 
         <div class="nav-container">
 
+
+            <!-- BRAND -->
+
             <a href="index.html" class="brand">
-                <div class="brand-name">Madhab Raj Neupane</div>
+
+                <div class="brand-name">
+                    Madhab Raj Neupane
+                </div>
+
                 <div class="brand-subtitle">
                     Planning · Development · Research
                 </div>
+
             </a>
 
+
+            <!-- NAVIGATION -->
+
             <nav>
+
                 <ul>
 
-    <li>
-        <a href="index.html">Home</a>
-    </li>
 
-    <li class="dropdown">
-        <a href="about.html">About ▾</a>
-        <ul class="dropdown-menu">
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="profile.html">Professional Profile</a></li>
-            <li><a href="journey.html">Experience &amp; Journey</a></li>
-        </ul>
-    </li>
+                    <!-- HOME -->
 
-    <li class="dropdown">
-        <a href="research.html">Research ▾</a>
-        <ul class="dropdown-menu">
-            <li><a href="research.html">Research Areas</a></li>
-            <li><a href="projects.html">Research Projects</a></li>
-            <li><a href="publications.html">Publications</a></li>
-        </ul>
-    </li>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
 
-    <li class="dropdown">
-        <a href="development.html">Development &amp; Planning ▾</a>
-        <ul class="dropdown-menu">
-            <li><a href="planning.html">Spatial Planning</a></li>
-            <li><a href="infrastructure.html">Infrastructure</a></li>
-            <li><a href="development.html">Development Practice</a></li>
-            <li><a href="regional-development.html">Regional Development</a></li>
-        </ul>
-    </li>
 
-    <li class="dropdown">
-        <a href="insights.html">Insights ▾</a>
-        <ul class="dropdown-menu">
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="perspectives.html">Perspectives</a></li>
-            <li><a href="reflections.html">Reflections</a></li>
-        </ul>
-    </li>
+                    <!-- ABOUT -->
 
-    <li>
-        <a href="contact.html">Contact</a>
-    </li>
+                    <li class="dropdown">
 
-</ul>
+                        <a href="about.html">
+                            About ▾
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="about.html">
+                                    About Me
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="profile.html">
+                                    Professional Profile
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="journey.html">
+                                    Experience &amp; Journey
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- RESEARCH -->
+
+                    <li class="dropdown">
+
+                        <a href="research.html">
+                            Research ▾
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="research.html">
+                                    Research Areas
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="projects.html">
+                                    Research Projects
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="publications.html">
+                                    Publications
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- DEVELOPMENT & PLANNING -->
+
+                    <li class="dropdown">
+
+                        <a href="development.html">
+                            Development &amp; Planning ▾
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="planning.html">
+                                    Spatial Planning
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="infrastructure.html">
+                                    Infrastructure
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="development.html">
+                                    Development Practice
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="regional-development.html">
+                                    Regional Development
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- INSIGHTS -->
+
+                    <li class="dropdown">
+
+                        <a href="insights.html">
+                            Insights ▾
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="articles.html">
+                                    Articles
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="perspectives.html">
+                                    Perspectives
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="reflections.html">
+                                    Reflections
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- CONTACT -->
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+
+                </ul>
+
             </nav>
 
         </div>
 
     </header>
 
+
+    <!-- =========================================================
+         HOMEPAGE
+         ========================================================= -->
+
     <main>
 
-        <h1>Planning, Development &amp; Research</h1>
+        <h1>
+            Planning, Development &amp; Research
+        </h1>
 
         <p>
             Exploring the relationships between spatial planning,
@@ -236,5 +729,7 @@ nav ul li {
 
     </main>
 
+
 </body>
+
 </html>
