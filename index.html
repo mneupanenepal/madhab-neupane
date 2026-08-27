@@ -7,11 +7,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Madhab Raj Neupane | Planning, Development & Research</title>
+    <title>Madhab Raj Neupane</title>
 
     <meta
         name="description"
-        content="Madhab Raj Neupane — Planning, Development, Infrastructure and Research."
+        content="Planning, development and research through the perspective of Madhab Raj Neupane."
     >
 
     <style>
@@ -100,12 +100,6 @@
             margin-left: auto;
         }
 
-        /*
-           IMPORTANT:
-           nav > ul means ONLY the main navigation list.
-           The dropdown lists will NOT inherit this flex layout.
-        */
-
         nav > ul {
             list-style: none;
 
@@ -120,15 +114,11 @@
         }
 
 
-        /* Main menu items */
-
         nav > ul > li {
             position: relative;
             list-style: none;
         }
 
-
-        /* Main menu links */
 
         nav > ul > li > a {
             display: block;
@@ -150,8 +140,6 @@
         }
 
 
-        /* Main menu hover */
-
         nav > ul > li > a:hover {
             color: #167c68;
         }
@@ -164,13 +152,6 @@
         nav li.dropdown {
             position: relative;
         }
-
-
-        /*
-           Invisible bridge between menu item and dropdown.
-           This prevents the dropdown disappearing while moving
-           the mouse from the menu item into the dropdown.
-        */
 
         nav li.dropdown::after {
             content: "";
@@ -185,8 +166,6 @@
             height: 8px;
         }
 
-
-        /* Dropdown box */
 
         nav .dropdown-menu {
             display: none;
@@ -213,17 +192,10 @@
 
             z-index: 2000;
 
-            /*
-               IMPORTANT:
-               Dropdown must be vertical.
-            */
-
             flex-direction: column;
             gap: 0;
         }
 
-
-        /* Dropdown list items */
 
         nav .dropdown-menu li {
             display: block;
@@ -236,8 +208,6 @@
             list-style: none;
         }
 
-
-        /* Dropdown links */
 
         nav .dropdown-menu li a {
             display: block;
@@ -263,15 +233,11 @@
         }
 
 
-        /* Dropdown hover */
-
         nav .dropdown-menu li a:hover {
             background: #f4f7f6;
             color: #167c68;
         }
 
-
-        /* Show dropdown on hover */
 
         nav li.dropdown:hover > .dropdown-menu {
             display: flex;
@@ -279,7 +245,7 @@
 
 
         /* =========================================================
-           MAIN HOMEPAGE CONTENT
+           HOMEPAGE
            ========================================================= */
 
         main {
@@ -287,16 +253,125 @@
 
             margin: 0 auto;
 
-            padding: 80px 30px 100px;
+            padding: 70px 30px 100px;
         }
 
 
-        main h1 {
-            font-size: 42px;
+        /* =========================================================
+           HERO
+           ========================================================= */
 
-            line-height: 1.15;
+        .hero {
+            display: grid;
 
-            margin-bottom: 20px;
+            grid-template-columns: 1fr 320px;
+
+            gap: 70px;
+
+            align-items: center;
+
+            padding: 20px 0 70px;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+
+        .hero-title {
+            font-size: 48px;
+
+            line-height: 1.12;
+
+            margin-bottom: 22px;
+
+            color: #111;
+
+            font-weight: 700;
+
+            letter-spacing: -1px;
+        }
+
+
+        .hero-tagline {
+            max-width: 760px;
+
+            font-size: 20px;
+
+            line-height: 1.65;
+
+            color: #666;
+        }
+
+
+        /* =========================================================
+           PROFILE PHOTO
+           ========================================================= */
+
+        .profile-photo-container {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .profile-photo {
+            width: 280px;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            display: block;
+
+            border: 1px solid #e5e5e5;
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================================================
+           PERSPECTIVE SECTION
+           ========================================================= */
+
+        .perspective-section {
+            max-width: 900px;
+
+            margin: 75px auto 0;
+
+            padding: 0 10px;
+        }
+
+
+        .section-label {
+            margin-bottom: 18px;
+
+            color: #167c68;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .perspective-title {
+            font-size: 32px;
+
+            line-height: 1.25;
+
+            margin-bottom: 22px;
 
             color: #111;
 
@@ -304,31 +379,94 @@
         }
 
 
-        main p {
-            max-width: 780px;
-
+        .rich-text {
             font-size: 18px;
 
-            line-height: 1.7;
+            line-height: 1.8;
 
-            color: #666;
+            color: #4f4f4f;
         }
 
 
-        /* =========================================================
-           GENERAL CONTENT LINKS
-           ========================================================= */
+        .rich-text p {
+            margin-bottom: 18px;
+        }
 
-        main a {
+
+        .rich-text p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .rich-text strong {
+            color: #222;
+        }
+
+
+        .rich-text em {
+            font-style: italic;
+        }
+
+
+        .rich-text a {
             color: #167c68;
 
             text-decoration: none;
         }
 
-        main a:hover {
-            color: #0f5f51;
 
+        .rich-text a:hover {
             text-decoration: underline;
+        }
+
+
+        /* =========================================================
+           INTRODUCTION
+           ========================================================= */
+
+        .introduction-section {
+            max-width: 900px;
+
+            margin: 65px auto 0;
+
+            padding: 45px 0 0;
+
+            border-top: 1px solid #eeeeee;
+        }
+
+
+        .introduction-title {
+            font-size: 28px;
+
+            line-height: 1.3;
+
+            margin-bottom: 20px;
+
+            color: #111;
+        }
+
+
+        /* =========================================================
+           LOADING / ERROR
+           ========================================================= */
+
+        .loading {
+            color: #888;
+
+            font-size: 16px;
+        }
+
+
+        .error-message {
+            padding: 20px;
+
+            border: 1px solid #e5e5e5;
+
+            background: #fafafa;
+
+            color: #777;
+
+            border-radius: 5px;
         }
 
 
@@ -339,7 +477,7 @@
         footer {
             max-width: 1200px;
 
-            margin: 60px auto 0;
+            margin: 20px auto 0;
 
             padding: 30px;
 
@@ -373,6 +511,21 @@
 
             .brand-name {
                 font-size: 20px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr 260px;
+
+                gap: 45px;
+            }
+
+            .profile-photo {
+                width: 240px;
+                height: 240px;
+            }
+
+            .hero-title {
+                font-size: 42px;
             }
         }
 
@@ -428,10 +581,6 @@
             }
 
 
-            /*
-               Mobile dropdowns become part of the normal page flow.
-            */
-
             nav .dropdown-menu {
                 position: static;
 
@@ -455,10 +604,6 @@
             }
 
 
-            /*
-               On mobile, keep dropdown accessible.
-            */
-
             nav li.dropdown:hover > .dropdown-menu {
                 display: flex;
             }
@@ -474,23 +619,76 @@
 
 
             main {
-                padding: 55px 20px 80px;
+                padding: 50px 20px 70px;
             }
 
 
-            main h1 {
-                font-size: 34px;
+            .hero {
+                display: flex;
+
+                flex-direction: column-reverse;
+
+                align-items: flex-start;
+
+                gap: 35px;
+
+                padding-bottom: 55px;
             }
 
 
-            main p {
-                font-size: 16px;
+            .profile-photo-container {
+                width: 100%;
+
+                justify-content: flex-start;
+            }
+
+
+            .profile-photo {
+                width: 220px;
+
+                height: 220px;
+            }
+
+
+            .hero-title {
+                font-size: 36px;
+
+                letter-spacing: -0.5px;
+            }
+
+
+            .hero-tagline {
+                font-size: 17px;
+            }
+
+
+            .perspective-section {
+                margin-top: 55px;
+
+                padding: 0;
+            }
+
+
+            .perspective-title {
+                font-size: 28px;
+            }
+
+
+            .rich-text {
+                font-size: 17px;
+
+                line-height: 1.75;
+            }
+
+
+            .introduction-section {
+                margin-top: 50px;
             }
         }
 
 
         /* =========================================================
-           VERY SMALL MOBILE SCREENS
+           VERY SMALL MOBILE
            ========================================================= */
 
         @media (max-width: 500px) {
@@ -503,8 +701,18 @@
                 font-size: 11px;
             }
 
-            main h1 {
-                font-size: 30px;
+            .hero-title {
+                font-size: 31px;
+            }
+
+            .profile-photo {
+                width: 190px;
+
+                height: 190px;
+            }
+
+            .perspective-title {
+                font-size: 25px;
             }
         }
 
@@ -713,21 +921,662 @@
 
 
     <!-- =========================================================
-         HOMEPAGE
+         HOMEPAGE CONTENT
+         Loaded dynamically from:
+         content/homepage.md
          ========================================================= -->
 
-    <main>
+    <main id="homepage-content">
 
-        <h1>
-            Planning, Development &amp; Research
-        </h1>
-
-        <p>
-            Exploring the relationships between spatial planning,
-            infrastructure, development, governance and society.
-        </p>
+        <div class="loading">
+            Loading homepage...
+        </div>
 
     </main>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+
+        <div>
+            © <span id="current-year"></span> Madhab Raj Neupane
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         HOMEPAGE CMS LOADER
+         ========================================================= -->
+
+    <script>
+
+        /*
+         * ========================================================
+         * LOAD HOMEPAGE CONTENT FROM PAGES CMS
+         * ========================================================
+         *
+         * Pages CMS stores the homepage at:
+         *
+         * content/homepage.md
+         *
+         * This JavaScript reads that file and displays:
+         *
+         * - title
+         * - tagline
+         * - profile photo
+         * - perspective title
+         * - my perspective
+         * - introduction
+         *
+         */
+
+
+        async function loadHomepage() {
+
+            const homepageContainer =
+                document.getElementById("homepage-content");
+
+
+            try {
+
+                const response = await fetch(
+                    "content/homepage.md?cache=" + Date.now()
+                );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Homepage content could not be loaded."
+                    );
+
+                }
+
+
+                const markdown =
+                    await response.text();
+
+
+                const data =
+                    parseFrontMatter(markdown);
+
+
+                renderHomepage(data);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                homepageContainer.innerHTML = `
+
+                    <div class="error-message">
+
+                        <strong>
+                            Homepage content could not be loaded.
+                        </strong>
+
+                        <br><br>
+
+                        Please check that
+                        <strong>content/homepage.md</strong>
+                        exists in the repository.
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /*
+         * ========================================================
+         * PARSE SIMPLE YAML FRONT MATTER
+         * ========================================================
+         */
+
+        function parseFrontMatter(markdown) {
+
+            const result = {};
+
+
+            if (!markdown.startsWith("---")) {
+
+                return {
+                    body: markdown
+                };
+
+            }
+
+
+            const end =
+                markdown.indexOf(
+                    "\n---",
+                    3
+                );
+
+
+            if (end === -1) {
+
+                return {
+                    body: markdown
+                };
+
+            }
+
+
+            const frontMatter =
+                markdown.substring(
+                    3,
+                    end
+                );
+
+
+            const body =
+                markdown.substring(
+                    end + 4
+                );
+
+
+            const lines =
+                frontMatter.split(/\r?\n/);
+
+
+            let currentKey = null;
+
+            let currentValue = [];
+
+
+            function saveCurrent() {
+
+                if (!currentKey) {
+                    return;
+                }
+
+
+                result[currentKey] =
+                    currentValue
+                        .join("\n")
+                        .trim();
+
+            }
+
+
+            for (let line of lines) {
+
+                /*
+                 * Ignore empty lines.
+                 */
+
+                if (!line.trim()) {
+
+                    if (currentKey) {
+                        currentValue.push("");
+                    }
+
+                    continue;
+
+                }
+
+
+                /*
+                 * New YAML key.
+                 */
+
+                const match =
+                    line.match(
+                        /^([A-Za-z0-9_-]+):\s*(.*)$/
+                    );
+
+
+                if (match) {
+
+                    saveCurrent();
+
+
+                    currentKey =
+                        match[1];
+
+
+                    const value =
+                        match[2].trim();
+
+
+                    currentValue = [];
+
+
+                    /*
+                     * Handle block scalar:
+                     *
+                     * key: |
+                     * key: >
+                     * key: |-
+                     * key: >-
+                     */
+
+                    if (
+                        value === "|" ||
+                        value === ">" ||
+                        value === "|-" ||
+                        value === ">-"
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    result[currentKey] =
+                        removeQuotes(value);
+
+
+                    currentKey = null;
+
+                    continue;
+
+                }
+
+
+                /*
+                 * Continuation line.
+                 */
+
+                if (currentKey) {
+
+                    currentValue.push(
+                        line.replace(
+                            /^\s{2,}/,
+                            ""
+                        )
+                    );
+
+                }
+
+            }
+
+
+            saveCurrent();
+
+
+            result.body = body.trim();
+
+
+            return result;
+
+        }
+
+
+        /*
+         * ========================================================
+         * REMOVE SIMPLE YAML QUOTES
+         * ========================================================
+         */
+
+        function removeQuotes(value) {
+
+            if (
+                value.length >= 2 &&
+                (
+                    (
+                        value.startsWith('"') &&
+                        value.endsWith('"')
+                    ) ||
+                    (
+                        value.startsWith("'") &&
+                        value.endsWith("'")
+                    )
+                )
+            ) {
+
+                return value.substring(
+                    1,
+                    value.length - 1
+                );
+
+            }
+
+
+            return value;
+
+        }
+
+
+        /*
+         * ========================================================
+         * RENDER HOMEPAGE
+         * ========================================================
+         */
+
+        function renderHomepage(data) {
+
+            const container =
+                document.getElementById(
+                    "homepage-content"
+                );
+
+
+            /*
+             * CMS fields
+             */
+
+            const title =
+                data.title ||
+                "Planning, Development & Research";
+
+
+            const tagline =
+                data.tagline ||
+                "";
+
+
+            const photo =
+                data.profile_photo ||
+                "";
+
+
+            const perspectiveTitle =
+                data.perspective_title ||
+                "My Perspective";
+
+
+            const perspective =
+                data.perspective ||
+                "";
+
+
+            const introduction =
+                data.introduction ||
+                "";
+
+
+            /*
+             * Build homepage.
+             */
+
+            container.innerHTML = `
+
+                <section class="hero">
+
+                    <div class="hero-content">
+
+                        <h1 class="hero-title">
+                            ${escapeHTML(title)}
+                        </h1>
+
+                        <div class="hero-tagline">
+                            ${escapeHTML(tagline)}
+                        </div>
+
+                    </div>
+
+
+                    ${
+                        photo
+                        ?
+                        `
+                        <div class="profile-photo-container">
+
+                            <img
+                                class="profile-photo"
+                                src="${escapeAttribute(photo)}"
+                                alt="Madhab Raj Neupane"
+                                onerror="this.style.display='none';"
+                            >
+
+                        </div>
+                        `
+                        :
+                        ""
+                    }
+
+                </section>
+
+
+                <section class="perspective-section">
+
+                    <div class="section-label">
+                        Perspective
+                    </div>
+
+                    <h2 class="perspective-title">
+                        ${escapeHTML(perspectiveTitle)}
+                    </h2>
+
+                    <div class="rich-text">
+                        ${markdownToHTML(perspective)}
+                    </div>
+
+                </section>
+
+
+                ${
+                    introduction
+                    ?
+                    `
+                    <section class="introduction-section">
+
+                        <h2 class="introduction-title">
+                            Introduction
+                        </h2>
+
+                        <div class="rich-text">
+                            ${markdownToHTML(introduction)}
+                        </div>
+
+                    </section>
+                    `
+                    :
+                    ""
+                }
+
+            `;
+
+
+            /*
+             * Update browser title.
+             */
+
+            document.title =
+                title +
+                " | Madhab Raj Neupane";
+
+
+            /*
+             * Update description.
+             */
+
+            const description =
+                document.querySelector(
+                    'meta[name="description"]'
+                );
+
+
+            if (description && tagline) {
+
+                description.setAttribute(
+                    "content",
+                    tagline
+                );
+
+            }
+
+        }
+
+
+        /*
+         * ========================================================
+         * BASIC MARKDOWN → HTML
+         * ========================================================
+         *
+         * This supports the basic formatting normally useful
+         * in the Pages CMS rich-text fields.
+         */
+
+        function markdownToHTML(text) {
+
+            if (!text) {
+
+                return "";
+
+            }
+
+
+            let html =
+                escapeHTML(text);
+
+
+            /*
+             * Paragraphs
+             */
+
+            const paragraphs =
+                html
+                    .split(/\n\s*\n/)
+                    .map(
+                        paragraph =>
+                            paragraph.trim()
+                    )
+                    .filter(
+                        paragraph =>
+                            paragraph.length > 0
+                    );
+
+
+            html =
+                paragraphs
+                    .map(
+                        paragraph =>
+                            "<p>" +
+                            paragraph +
+                            "</p>"
+                    )
+                    .join("");
+
+
+            /*
+             * Bold
+             */
+
+            html =
+                html.replace(
+                    /\*\*(.*?)\*\*/g,
+                    "<strong>$1</strong>"
+                );
+
+
+            /*
+             * Italic
+             */
+
+            html =
+                html.replace(
+                    /\*(.*?)\*/g,
+                    "<em>$1</em>"
+                );
+
+
+            /*
+             * Markdown links
+             */
+
+            html =
+                html.replace(
+                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                    '<a href="$2">$1</a>'
+                );
+
+
+            /*
+             * Line breaks
+             */
+
+            html =
+                html.replace(
+                    /\n/g,
+                    "<br>"
+                );
+
+
+            return html;
+
+        }
+
+
+        /*
+         * ========================================================
+         * HTML SAFETY
+         * ========================================================
+         */
+
+        function escapeHTML(value) {
+
+            if (!value) {
+
+                return "";
+
+            }
+
+
+            return String(value)
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+
+        function escapeAttribute(value) {
+
+            return escapeHTML(value);
+
+        }
+
+
+        /*
+         * ========================================================
+         * FOOTER YEAR
+         * ========================================================
+         */
+
+        document.getElementById(
+            "current-year"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        /*
+         * ========================================================
+         * START
+         * ========================================================
+         */
+
+        loadHomepage();
+
+    </script>
 
 
 </body>
