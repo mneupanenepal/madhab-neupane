@@ -3,6 +3,14 @@ media:
   output: /media
 
 content:
+
+  # ============================================================
+  # 1. ARTICLES
+  # ============================================================
+  # Main intellectual/public writing.
+  # Analysis, opinion, reflection, research-related writing, etc.
+  # ============================================================
+
   - name: articles
     label: Articles
     type: collection
@@ -25,6 +33,7 @@ content:
         order: desc
 
     fields:
+
       - name: title
         label: Title
         type: string
@@ -113,4 +122,451 @@ content:
 
       - name: body
         label: Content
+        type: rich-text
+
+
+  # ============================================================
+  # 2. RESEARCH
+  # ============================================================
+  # Research work, research projects, case studies, working papers,
+  # PhD-related research and other substantive research material.
+  # ============================================================
+
+  - name: research
+    label: Research
+    type: collection
+    path: content/research
+    filename: "{year}-{month}-{day}-{title}.md"
+
+    view:
+      fields:
+        - title
+        - language
+        - date
+        - research_type
+        - featured
+      primary: title
+      sort:
+        - date
+        - title
+      default:
+        sort: date
+        order: desc
+
+    fields:
+
+      - name: title
+        label: Research Title
+        type: string
+        required: true
+
+      - name: subtitle
+        label: Subtitle
+        type: string
+
+      - name: language
+        label: Language
+        type: select
+        options:
+          values:
+            - name: en
+              label: English
+            - name: ne
+              label: नेपाली
+            - name: de
+              label: Deutsch
+        required: true
+
+      - name: date
+        label: Date
+        type: date
+        required: true
+
+      - name: research_type
+        label: Research Type
+        type: select
+        options:
+          values:
+            - Research Project
+            - Research Paper
+            - Working Paper
+            - Research Note
+            - Case Study
+            - PhD Research
+            - Policy Research
+            - Other
+
+      - name: topics
+        label: Topics
+        type: select
+        options:
+          multiple: true
+          values:
+            - Nepal
+            - Karnali
+            - Urban Development
+            - Regional Development
+            - Spatial Planning
+            - Infrastructure
+            - Governance
+            - Decentralization
+            - Social Justice
+            - Environment
+            - Climate Change
+            - Disaster
+            - Migration
+            - Development
+            - Politics
+            - Society
+            - Culture
+            - Technology
+            - Research
+
+      - name: places
+        label: Places
+        type: select
+        options:
+          multiple: true
+          values:
+            - Nepal
+            - Karnali
+            - Kathmandu
+            - Jumla
+            - Birendranagar
+            - South Asia
+            - Germany
+            - Bangladesh
+            - Global
+
+      - name: excerpt
+        label: Abstract / Excerpt
+        type: text
+
+      - name: featured_image
+        label: Featured Image
+        type: image
+        options:
+          path: research
+
+      - name: featured
+        label: Featured Research
+        type: boolean
+
+      - name: translation_group
+        label: Translation Group
+        type: string
+
+      - name: body
+        label: Research Content
+        type: rich-text
+
+
+  # ============================================================
+  # 3. PUBLICATIONS
+  # ============================================================
+  # Published outputs: journal articles, reports, chapters,
+  # policy briefs, conference papers, theses, etc.
+  # ============================================================
+
+  - name: publications
+    label: Publications
+    type: collection
+    path: content/publications
+    filename: "{year}-{month}-{day}-{title}.md"
+
+    view:
+      fields:
+        - title
+        - language
+        - date
+        - publication_type
+      primary: title
+      sort:
+        - date
+        - title
+      default:
+        sort: date
+        order: desc
+
+    fields:
+
+      - name: title
+        label: Publication Title
+        type: string
+        required: true
+
+      - name: subtitle
+        label: Subtitle
+        type: string
+
+      - name: language
+        label: Language
+        type: select
+        options:
+          values:
+            - name: en
+              label: English
+            - name: ne
+              label: नेपाली
+            - name: de
+              label: Deutsch
+        required: true
+
+      - name: date
+        label: Publication Date
+        type: date
+        required: true
+
+      - name: publication_type
+        label: Publication Type
+        type: select
+        options:
+          values:
+            - Journal Article
+            - Book
+            - Book Chapter
+            - Report
+            - Working Paper
+            - Policy Brief
+            - Conference Paper
+            - Thesis
+            - Dissertation
+            - Other
+
+      - name: publisher
+        label: Publisher / Journal
+        type: string
+
+      - name: url
+        label: Publication URL
+        type: string
+
+      - name: excerpt
+        label: Abstract / Description
+        type: text
+
+      - name: featured_image
+        label: Featured Image
+        type: image
+        options:
+          path: publications
+
+      - name: pdf
+        label: Publication PDF
+        type: file
+        options:
+          path: publications
+
+      - name: topics
+        label: Topics
+        type: select
+        options:
+          multiple: true
+          values:
+            - Nepal
+            - Karnali
+            - Urban Development
+            - Regional Development
+            - Spatial Planning
+            - Infrastructure
+            - Governance
+            - Decentralization
+            - Social Justice
+            - Environment
+            - Climate Change
+            - Disaster
+            - Migration
+            - Development
+            - Politics
+            - Society
+            - Culture
+            - Technology
+            - Research
+
+      - name: featured
+        label: Featured Publication
+        type: boolean
+
+      - name: translation_group
+        label: Translation Group
+        type: string
+
+      - name: body
+        label: Publication Description
+        type: rich-text
+
+
+  # ============================================================
+  # 4. PRACTICE / SELECTED WORK & EXPERIENCE
+  # ============================================================
+  #
+  # NOT a conventional project portfolio.
+  #
+  # This is a personal record of significant work and professional
+  # experience across different kinds of assignments.
+  #
+  # The purpose is to document:
+  # - what the work was
+  # - the context
+  # - what I did
+  # - my role and contribution
+  # - what I learned
+  # - ideas that emerged
+  # - what may be useful beyond the particular assignment
+  #
+  # There is deliberately NO:
+  # - project status
+  # - budget
+  # - client-management dashboard
+  # - completion percentage
+  # - conventional project portfolio structure
+  #
+  # ============================================================
+
+  - name: practice
+    label: Selected Work & Experience
+    type: collection
+    path: content/practice
+    filename: "{year}-{month}-{day}-{title}.md"
+
+    view:
+      fields:
+        - title
+        - practice_type
+        - date
+        - location
+        - featured
+      primary: title
+      sort:
+        - date
+        - title
+      default:
+        sort: date
+        order: desc
+
+    fields:
+
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: practice_type
+        label: Type of Work
+        type: select
+        options:
+          multiple: true
+          values:
+            - Planning
+            - Design
+            - Implementation
+            - Research
+            - Monitoring
+            - Evaluation
+            - Development
+            - Spatial Analysis
+            - GIS
+            - Infrastructure
+            - Community Engagement
+            - Project Management
+            - Policy
+            - Institutional Development
+            - Other
+
+      - name: date
+        label: Period / Date
+        type: date
+        required: true
+
+      - name: location
+        label: Location
+        type: string
+
+      - name: language
+        label: Language
+        type: select
+        options:
+          values:
+            - name: en
+              label: English
+            - name: ne
+              label: नेपाली
+            - name: de
+              label: Deutsch
+        required: true
+
+      - name: synopsis
+        label: Brief Synopsis
+        type: text
+
+      - name: context
+        label: Context / Background
+        type: text
+
+      - name: my_role
+        label: My Role & Contribution
+        type: text
+
+      - name: methods
+        label: Methods / Approaches
+        type: text
+
+      - name: key_lessons
+        label: Key Lessons
+        type: text
+
+      - name: ideas
+        label: Ideas / Reflections
+        type: text
+
+      - name: broader_relevance
+        label: What Could Be Taken Forward
+        type: text
+
+      - name: featured_image
+        label: Featured Image
+        type: image
+        options:
+          path: practice
+
+      - name: featured
+        label: Featured Experience
+        type: boolean
+
+      - name: translation_group
+        label: Translation Group
+        type: string
+
+      - name: related_articles
+        label: Related Articles
+        type: reference
+        options:
+          collection: articles
+          multiple: true
+          search: "title"
+          value: "{path}"
+          label: "{title}"
+
+      - name: related_research
+        label: Related Research
+        type: reference
+        options:
+          collection: research
+          multiple: true
+          search: "title"
+          value: "{path}"
+          label: "{title}"
+
+      - name: related_publications
+        label: Related Publications
+        type: reference
+        options:
+          collection: publications
+          multiple: true
+          search: "title"
+          value: "{path}"
+          label: "{title}"
+
+      - name: body
+        label: Full Experience / Reflection
         type: rich-text
